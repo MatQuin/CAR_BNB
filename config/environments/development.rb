@@ -3,6 +3,7 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -41,6 +42,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+         config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -61,7 +63,7 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
-
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 

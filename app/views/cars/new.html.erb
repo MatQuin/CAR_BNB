@@ -1,14 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Add a new car</h1>
-        <%= simple_form_for(@car) do |f| %>
-          <%= f.input :km %>
-          <%= f.input :trademark %>
-          <%= f.input :year %>
-          <%= f.input :price %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
-    </div>
-  </div>
+<div class="container mt-5">
+  <h1>Add a new car</h1>
+
+  <%= render "form" %>
 </div>

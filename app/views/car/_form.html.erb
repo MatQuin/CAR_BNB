@@ -1,0 +1,36 @@
+<!-- <%#= form_with @pet do |f| %>
+  <div class="form-group">
+    <%#= f.label :name %>
+    <%#= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%#= f.label :address %>
+    <%#= f.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%#= f.label :species %>
+    <%#= f.select :species, collection: Pet::SPECIES, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%#= f.label :found_on %>
+    <%#= f.date_field :found_on, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%#= f.submit class: "btn btn-primary" %>
+  </div>
+<%# end %> -->
+
+   <%= simple_form_for(@car) do |f| %>
+          <%= f.input :trademark %>
+          <%= f.input :year %>
+          <%= f.input :km %>
+          <%= f.input :price %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+  <%= link_to "Delete", car_path(Car.last), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" } %>
+  <%= button_to "Delete", car_path(Car.last), method: :delete, form: { data: { turbo_confirm: "Are your sure?" } } %>
+<% end %>

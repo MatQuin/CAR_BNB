@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <h1>rent a car</h1>
+
+  <ul>
+    <% @cars.each do |car| %>
+      <li><%= link_to car.model, car_path(car) %></li>
+    <% end %>
+  </ul>
+
+</div>

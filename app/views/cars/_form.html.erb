@@ -33,4 +33,3 @@
         <% end %>
   <%= link_to "Delete", car_path(Car.last), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" } %>
   <%= button_to "Delete", car_path(Car.last), method: :delete, form: { data: { turbo_confirm: "Are your sure?" } } %>
-<% end %>

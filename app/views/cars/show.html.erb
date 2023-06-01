@@ -36,6 +36,7 @@
           <div class="flex ms-3">
             <%= @car.price %>€
           </div>
+          <%= button_to "Delete", car_path(@car), method: :delete, form: { data: { turbo_confirm: "Are your sure?" } } %>
         </div>
       </div>
       <div class="car-show-card">

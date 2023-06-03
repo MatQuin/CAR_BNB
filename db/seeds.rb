@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 user1 = User.create!(
   email: 'toto@aoao.com',
-  encrypted_password: '2020',
+  password: '202020',
   name: 'toto1',
   surname: 'toto2'
 )
@@ -24,7 +24,7 @@ car1.save
 
 user2 = User.create!(
   email: 'toeazeazeza@aoao.com',
-  encrypted_password: '2020',
+  password: '202020',
   name: 'MisterB',
   surname: 'MisterBagnole'
 )
@@ -41,7 +41,7 @@ car2.save
 
 user3 = User.create!(
   email: 'toeazeazeazeazccceza@aoao.com',
-  encrypted_password: '2020',
+  password: '202020',
   name: 'loueur1',
   surname: 'MisterLocation'
 )

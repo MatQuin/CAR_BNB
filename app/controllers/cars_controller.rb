@@ -31,6 +31,7 @@ def edit
 end
 
 def show
+  @booking = Booking.new
 end
 
 def update

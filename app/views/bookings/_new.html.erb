@@ -1,0 +1,22 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a new bookings</h3>
+        <%= simple_form_for [@car, @booking] do |f| %>
+        <form class="simple_form new_booking" id="new_booking" novalidate="novalidate" action="/bookings" accept-charset="UTF-8" method="post">
+          <input type="hidden" name="authenticity_token" value="6mcCvU7ZazpIBcJTptw/8y4EucmzccFWli7tFUzX6IJEx8wq6PFC7m4rA1Jy+W4YW1hlhYhSOyhZefWtOM5ofQ==">
+          <div class="input-group">
+            <span class="input-group-text" id="start-date-label">From:</span>
+             </div>
+          <%= f.input :start, as: :date, html5: true %>
+          <span class="input-group-text" id="end-date-label">To:</span>
+           <div class="input-group mt-2">
+          <%= f.input :end, as: :date, html5: true %>
+                    </div>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

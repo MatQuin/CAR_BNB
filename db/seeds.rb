@@ -5,61 +5,56 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-Car.create!(
-  trademark: 'Volvo',
-  year: '2021',
-  km: '100000',
-  price: 75,
-  user_id: 1
-)
-
-Car.create!(
-  trademark: 'Opel',
-  year: '2022',
-  km: '102000',
-  price: 90,
-  user_id: 1
-)
-
-Car.create!(
-  trademark: 'Audi',
-  year: '2020',
-  km: '1012000',
-  price: 100,
-  user_id: 2
-)
-
-Car.create!(
-  trademark: 'Peugeot',
-  year: '2020',
-  km: '10120020',
-  price: 100,
-  user_id: 2
-)
-
-User.create!(
+user1 = User.create!(
   email: 'toto@aoao.com',
   encrypted_password: '2020',
   name: 'toto1',
   surname: 'toto2'
 )
 
-User.create!(
+car1 = Car.new(
+  trademark: 'Volvo',
+  year: '2021',
+  km: '100000',
+  price: 75
+)
+car1.user = user1
+car1.save
+
+user2 = User.create!(
   email: 'toeazeazeza@aoao.com',
   encrypted_password: '2020',
   name: 'MisterB',
   surname: 'MisterBagnole'
 )
 
-User.create!(
+car2 = Car.new(
+  trademark: 'BMW',
+  year: '2022',
+  km: '6000',
+  price: 100
+)
+car2.user = user2
+car2.save
+
+user3 = User.create!(
   email: 'toeazeazeazeazccceza@aoao.com',
   encrypted_password: '2020',
   name: 'loueur1',
   surname: 'MisterLocation'
 )
 
-Booking.create!(
-  car_id: '1',
-  user_id: '3',
+car3 = Car.new(
+  trademark: 'Opel',
+  year: '2022',
+  km: '102000',
+  price: 90,
+  user_id: 1
 )
+car3.user = user3
+car3.save
+
+booking1 = Booking.new(start: Date.today, end: Date.today + 2)
+booking1.user = user1
+booking1.car = car2
+booking1.save

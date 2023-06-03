@@ -25,9 +25,10 @@
 <%# end %> -->
 
    <%= simple_form_for(@car) do |f| %>
-          <%= f.input :trademark %>
+          <%= f.input :trademark, label:" Model" %>
           <%= f.input :year %>
           <%= f.input :km %>
           <%= f.input :price %>
+          <%= f.input :address %>
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>

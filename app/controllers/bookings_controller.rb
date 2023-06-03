@@ -12,10 +12,14 @@ end
 
 def create
   @booking = Booking.new(booking_params)
+  @booking.user = current_user
+  @car = Car.find(params[:car_id])
+  @booking.car = @car
   if @booking.save
-    redirect_to bookings_path
+    redirect_to dashboard_path
   else
-    render :new, status: :unprocessable_entity
+#    render :new, status: :unprocessable_entity
+  render "cars/show", status: :unprocessable_entity
   end
 end
 

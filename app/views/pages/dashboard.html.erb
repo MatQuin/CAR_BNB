@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-      <%= @bookings %>
+        <ul>
+        <%= @bookings.each do |booking| %>
+            <li><%= link_to booking.start, booking_path(booking) %></li>
+            <li><%= link_to booking.end, booking_path(booking) %></li>
+      <% end %>
+      </ul>
     </div>
   </div>
 </div>

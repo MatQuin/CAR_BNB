@@ -48,6 +48,18 @@ User.create!(
 User.create!(
   email: 'toeazeazeza@aoao.com',
   encrypted_password: '2020',
-  name: 'touuu',
-  surname: "toazeazea'
+  name: 'MisterB',
+  surname: 'MisterBagnole'
+)
+
+User.create!(
+  email: 'toeazeazeazeazccceza@aoao.com',
+  encrypted_password: '2020',
+  name: 'loueur1',
+  surname: 'MisterLocation'
+)
+
+Booking.create!(
+  car_id: '1',
+  user_id: '3',
 )

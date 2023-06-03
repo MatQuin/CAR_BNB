@@ -16,7 +16,8 @@ car1 = Car.new(
   trademark: 'Volvo',
   year: '2021',
   km: '100000',
-  price: 75
+  price: 75,
+  address: '13 villa Gaudelet, Paris'
 )
 car1.user = user1
 car1.save
@@ -32,7 +33,8 @@ car2 = Car.new(
   trademark: 'BMW',
   year: '2022',
   km: '6000',
-  price: 100
+  price: 100,
+  address: 'Place de la Rébulique, Paris'
 )
 car2.user = user2
 car2.save
@@ -49,7 +51,8 @@ car3 = Car.new(
   year: '2022',
   km: '102000',
   price: 90,
-  user_id: 1
+  user_id: 1,
+  address: 'Place de la Concorde, Paris'
 )
 car3.user = user3
 car3.save

@@ -60,7 +60,7 @@ def set_car
 end
 
 def car_params
-  params.require(:car).permit(:km, :trademark, :year, :price)
+  params.require(:car).permit(:km, :trademark, :year, :price, :photo)
 end
 
 end

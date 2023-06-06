@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-8">
       <div class="car-show-card">
+        <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
         <h1><%= @car.trademark %></h1>
         <p class="car-show-price"><%= @car.price %></p>
     </div>

@@ -1,8 +1,40 @@
+<%# la y aura des cards cliquables avec les photos des voitures %>
 <div class="container mt-5">
-  <h1>rent a car</h1>
+  <h1>Rent a car</h1>
+  <p>what car are you looking for ? </p>
     <div class="row">
       <div class="col-6">
     <ul>
+
+<div class="row justify-content-left">
+
+    <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+
+
+
+  <div class="row justify-content-left">
+    <div class="col-sm-8 my-5">
+      <div id="cars">
+        <% if @cars.any? %>
+          <% @cars.each do |car| %>
+            <h4><%= car.trademark %></h4>
+            <p><%= car.price %></p>
+          <% end %>
+        <% else %>
+          <em>Sorry, no cars found.</em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
       <% @cars.each do |car| %>
         <li><%= link_to car.trademark, car_path(car) %></li>
       <% end %>

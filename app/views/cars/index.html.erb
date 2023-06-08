@@ -21,23 +21,22 @@
 
   <div class="row justify-content-left">
     <div class="col-sm-8 my-5">
-      <div id="cars">
-        <% if @cars.any? %>
-          <% @cars.each do |car| %>
-            <h4><%= car.trademark %></h4>
-            <p><%= car.price %></p>
+      <div class = "car-show-card">
+        <div id="cars">
+          <% if @cars.any? %>
+              <% @cars.each do |car| %>
+              <li><%= link_to car.trademark, car_path(car) %></li>
+              <p><%= car.price %></p>
+            <% end %>
+            <% else %>
+            <em>Sorry, no cars found.</em>
           <% end %>
-        <% else %>
-          <em>Sorry, no cars found.</em>
-        <% end %>
-      </div>
+        </div>
     </div>
   </div>
 </div>
 
-      <% @cars.each do |car| %>
-        <li><%= link_to car.trademark, car_path(car) %></li>
-      <% end %>
+
     </ul>
   </div>
       <div class="col-6">

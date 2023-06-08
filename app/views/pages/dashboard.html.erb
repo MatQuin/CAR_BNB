@@ -10,7 +10,9 @@
       <h1>My Cars under rental</h1>
         <ul>
         <% @bookings.each do |booking| %>
-          <h4> You have booked a car for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
+          <h4> <%= booking.car.user.name %> has booked your car <%= booking.car.trademark %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
+          <h4> to <%= booking.car.user %></h4>
+
       <% end %>
       </ul>
       </div>
@@ -18,8 +20,9 @@
       <h1>My Personal Bookings</h1>
         <ul>
         <% @bookings.each do |booking| %>
-          <h4> You have booked a car for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
-          <h4> from <%= booking.user_id %></h4>
+          <h4> You have booked the car <%= booking.car.trademark %> from <%= booking.car.year %> for the price of <%= booking.car.price %> euros/day <%= booking.car_id %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
+          <h4> from <%= booking.user.name %></h4>
+
       <% end %>
       </ul>
       </div>

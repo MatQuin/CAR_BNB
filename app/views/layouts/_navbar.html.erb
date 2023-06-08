@@ -12,16 +12,15 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "..", class: "nav-link" %>
+            <%= link_to "Browse Cars", "/cars", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Browse Cars", "/cars", class: "nav-link" %>
+            <%= link_to "My Dashboard", "/dashboard", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://avatars.githubusercontent.com/u/123788157?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Cars", cars_path, class: "dropdown-item" %>
-              <%= link_to "My Bookings", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Profile", cars_path, class: "dropdown-item" %>
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

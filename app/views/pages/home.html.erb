@@ -1,9 +1,12 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://lh5.googleusercontent.com/h864P8xA0xQJ38u6EHyhwh29iA5RW2POF-KA0Eu7tLwVlfSHzw-bAKQIwZHn8HeZSdNFM-b5M2NYZN4g4sDNSHzUivXXe3arhIQu8W0nDQVuEhmb17g9s7xLNDxaE9ZrFslxt3FwPe2cAeiQC-HeGmg);">
-  <div class="container">
-    <h1>car Bee&Bee</h1>
-    <%= link_to "Rent a car with us, we so cool", cars_path, class: "a-primary"%><br>
-       <%= link_to "Propose your car", "/cars/new", class: "a-primary"%>
+<div class="home-video-wrapper">
+<%= video_tag "home_page.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video" %>
+  <div class="title-wrapper">
+    <h1 class="home"> Welcome to WE CAR 4U </h1>
+    <p class="toto">
+      <%= link_to "Rent a car with us, we so cool", cars_path %><br>
+      <%= link_to "Propose your car", "/cars/new"%>
+    </p>
   </div>
 </div>
 

@@ -14,25 +14,28 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="mycars" role="tabpanel" aria-labelledby="mycars-tab"> <h1>My Cars</h1>
-        <% @cars.each do |car| %>
-          <h4>You have registered a <%= car.trademark %> from <%= car.year %> for the price of <%= car.price %> euros/day</h4>
-      <% end %></div>
+      <% @cars.each do |car| %>
+      <h4>You have registered a <%= car.trademark %> from <%= car.year %> for the price of <%= car.price %> euros/day</h4>
+      <% end %>
+  </div>
+
   <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab"><h1>My Cars under rental</h1>
-        <ul>
-        <% @cars.each do |car| %>
+      <ul>
+      <% @cars.each do |car| %>
         <% if car.bookings.empty? %>
-        <h4> No booking for <%= car.trademark %></h4>
+          <h4> No booking for <%= car.trademark %></h4>
         <% else %>
          <% car.bookings.each do |booking| %>
-          <h4> <%= booking.user.name %> has booked your car <%= booking.car.trademark %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
+        <h4> <%= booking.user.name %> has booked your car <%= booking.car.trademark %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
           <% end %>
         <% end %>
-        <% end %></div>
+      <% end %>
+  </div>
+
   <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab"><h1>My Personal Bookings</h1>
         <ul>
         <% @bookings.each do |booking| %>
           <h4> You have booked the car <%= booking.car.trademark %> (<%= booking.car.year %> edition) for the price of <%= booking.car.price %> euros/day for the periode starting <%= booking.start %> to <%= booking.end %> from <%= booking.car.user.name %> <%= booking.car.user.surname %> </h4>
-
-      <% end %>
+        <% end %>
       </ul></div>
 </div>

@@ -13,7 +13,8 @@ class CarsController < ApplicationController
       @markers = @cars.geocoded.map do |car|
         {
           lat: car.latitude,
-          lng: car.longitude
+          lng: car.longitude,
+          marker_html: render_to_string(partial: "marker")
         }
       end
     end

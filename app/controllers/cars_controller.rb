@@ -5,7 +5,7 @@ class CarsController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @cars = Car.where("name LIKE ?", "%#{params[:query]}%")
+      @cars = Car.where("trademark ILIKE ?", "%#{params[:query]}%")
       # Preventing SQL Injection and Database error for
       # unknown characters
     else

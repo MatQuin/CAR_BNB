@@ -36,6 +36,7 @@
         <ul>
         <% @bookings.each do |booking| %>
           <h4> You have booked the car <%= booking.car.trademark %> (<%= booking.car.year %> edition) for the price of <%= booking.car.price %> euros/day for the periode starting <%= booking.start %> to <%= booking.end %> from <%= booking.car.user.name %> <%= booking.car.user.surname %> </h4>
+          <h4><%= cl_image_tag booking.car.photo.key %></h4>
         <% end %>
       </ul></div>
 </div>

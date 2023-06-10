@@ -1,0 +1,29 @@
+.animation{
+  display: grid;
+  justify-content: center;
+}
+.i{
+	display: inline-flex;
+  width: 50px;
+
+	animation: anim 3s ease-in-out infinite;
+	transform:  translateY(-120%) rotate(0deg);
+}
+.n1{
+  animation-delay: 0.1s;
+}
+.n2{
+ animation-delay: 1.2s;
+}
+.n3{
+ animation-delay: 2s;
+}
+
+@keyframes anim{
+	0%{
+		transform:  translateY(-120%) rotate(0deg);
+	}
+	100%{
+		transform: translateY(120vh) rotate(-360deg);
+	}
+}

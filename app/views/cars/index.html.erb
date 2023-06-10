@@ -10,29 +10,33 @@
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Type a car model"%>
+            placeholder: "Type a car brand"%>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         <% end %>
 
         <div class = "car-show-card">
             <% if @cars.any? %>
               <% @cars.each do |car| %>
-                  <div class="card-product">
-                    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                    <div class="card-product-infos">
-                      <%= link_to car.trademark, car_path(car) %>
-                      <p><%= car.price %></p>
-                    </div>
+                <div class="card-product">
+                  <% if car.photo.attached? %>
+                    <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% else %>
+                    <%= image_tag "https://cdn-s-www.leprogres.fr/images/C688DF5D-8B87-4BA9-82B6-D37DB07CC969/NW_raw/mickael-passionne-par-l-univers-de-jurassic-park-photo-progres-guillaume-descave-1619958732.jpg"  %>
+                  <%end%>
+                  <div class="card-product-infos">
+                    <p> Car brand : <%= link_to car.trademark, car_path(car) %> </p>
+                    <p>Rate per day : <%= car.price %> € </p>
                   </div>
-                <% end %>
+                </div>
+              <% end %>
             <% else %>
               <em>Sorry, no cars found.</em>
             <% end %>
         </div>
       </div>
 
-
     <div class="col-6">
+    <p>Localize your car !</p>
       <div style="width: 100%; height: 400px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"

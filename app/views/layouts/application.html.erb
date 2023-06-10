@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'layouts/navbar' %>
     <title>CARBnb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
@@ -14,6 +13,7 @@
 
   </head>
   <body>
+    <%= render 'layouts/navbar' %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

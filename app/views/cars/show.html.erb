@@ -4,12 +4,12 @@
       <div class="car-show-card">
         <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
         <h1><%= @car.trademark %></h1>
-        <p class="car-show-price"><%= @car.price %></p>
+        <p class="car-show-price"><%= @car.price %> euros/day</p>
     </div>
     <div class="car-show-card">
       <h3>A bit more about this car...</h3>
-      <p><%= @car.year %></p>
-      <p><%= @car.km %></p>
+      <p><%= @car.year %> year edition</p>
+      <p><%= @car.km %> kilometer </p>
     </div>
   </div>
 

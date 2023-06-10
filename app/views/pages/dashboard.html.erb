@@ -5,7 +5,7 @@
     <button class="nav-link active" id="mycars-tab" data-bs-toggle="tab" data-bs-target="#mycars" type="button" role="tab" aria-controls="My Cars" aria-selected="true">My Cars</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="rental-tab" data-bs-toggle="tab" data-bs-target="#rental" type="button" role="tab" aria-controls="Rentals" aria-selected="false">My Rentals</button>
+    <button class="nav-link" id="rental-tab" data-bs-toggle="tab" data-bs-target="#rentals" type="button" role="tab" aria-controls="Rentals" aria-selected="false">My Rentals</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="Bookings" aria-selected="false">My Bookings</button>
@@ -16,17 +16,17 @@
   <div class="tab-pane fade show active" id="mycars" role="tabpanel" aria-labelledby="mycars-tab"> <h1>My Cars</h1>
       <% @cars.each do |car| %>
       <h4>You have registered a <%= car.trademark %> from <%= car.year %> for the price of <%= car.price %> euros/day</h4>
+      <h4><%= cl_image_tag car.photo.key %></h4>
       <% end %>
   </div>
 
-  <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab"><h1>My Cars under rental</h1>
-      <ul>
+  <div class="tab-pane fade" id="rentals" role="tabpanel" aria-labelledby="rentals-tab"><h1>My Rentals</h1>
       <% @cars.each do |car| %>
         <% if car.bookings.empty? %>
           <h4> No booking for <%= car.trademark %></h4>
         <% else %>
          <% car.bookings.each do |booking| %>
-        <h4> <%= booking.user.name %> has booked your car <%= booking.car.trademark %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
+          <h4> <%= booking.user.name %> has booked your car <%= booking.car.trademark %> for the periode <%= link_to booking.start, booking_path(booking) %> <%= link_to booking.end, booking_path(booking) %></h4>
           <% end %>
         <% end %>
       <% end %>
